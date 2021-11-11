@@ -1,0 +1,44 @@
+.titleContainer{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+
+    transition: all 0.4s ease;
+
+    h1{
+        display: inline-block;
+        text-align: center;
+        transition: 0.2s all ease;
+        cursor: context-menu;
+    }
+
+    .seperateH1{
+        display: inline-block;
+
+        &:hover{
+            transform: scale(1.05);
+            box-shadow: 5px 5px 1px rgba(0,0,0,1);
+        }
+    }
+
+    .togetherH1{
+        display: none;
+    }
+}
+
+
+@media (max-width: 768px){
+    
+    .titleContainer{
+
+        .seperateH1{
+            display: none;
+        }
+    
+        .togetherH1{
+            display: unset;
+        }
+
+    }
+
+}

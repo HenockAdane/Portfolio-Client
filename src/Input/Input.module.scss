@@ -1,0 +1,127 @@
+.inputContainer{
+    width: 100%;
+    position: relative;
+    padding: 10px 0;
+
+
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover, 
+    input:-webkit-autofill:focus, 
+    input:-webkit-autofill:active{
+        -webkit-box-shadow: 0 0 0 30px rgb(42,42,42) inset !important;
+        -webkit-text-fill-color: white;
+    }
+
+    input{
+        padding: 12px;
+        width: 100%;
+        margin: 10px 0;
+        border: 1px solid hsl(23,60%,98%);
+        outline: none;
+        border-radius: 5px;
+        color: rgb(200,200,200);
+        background-color: transparent !important;
+        transition: all ease-in 0.2s;
+        box-shadow: 5px 5px 1px rgba(0,0,0,1);
+
+
+        
+
+    
+        &:disabled{
+            color: gray;
+        }
+
+
+        // &:invalid{
+        //     border: 1px solid blue;
+        // }
+
+        &:focus{
+            // border: 1px solid #191919;
+            
+        }
+
+        // &::placeholder{
+        //     color: transparent;
+        // }
+    }
+
+
+    // &:focus-within{
+    //     label{
+    //         top: 0%;
+    //         left: 0px;
+    //     }
+    // }
+
+
+    label,p{
+        font-size: 14px;
+        line-height: 25px;
+        letter-spacing: 0.25;
+
+    }
+
+    p{
+        color: red;
+        // position: absolute;
+        // right: 0;
+        // top: 0;
+        text-align: right;
+    }
+
+    .details{
+        color: #cacaca;
+    }
+
+    label{
+        position: absolute;
+        transition: all ease-in 0.1s;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 10px;
+        color: transparent;
+        z-index: -1;
+        
+    }
+
+    
+    &:focus{
+        
+        label{
+            top: -5px;
+            left: 0px;
+            transform: unset;
+            color: unset;
+            z-index: unset;
+        }
+    }
+    
+
+
+
+    
+}
+
+.active{
+
+    // input{
+    //     box-shadow: 5px 5px 2px white;
+    // }
+
+    label{
+        top: -5px;
+        left: 0px;
+        transform: unset;
+        color: unset;
+        z-index: unset;
+    }
+
+    // input{
+    //     &::placeholder{
+    //         color: gray;
+    //     }
+    // }
+}

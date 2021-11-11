@@ -1,0 +1,205 @@
+.header{
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgb(42,42,42);
+
+
+
+
+    .absoluteHeader{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        z-index: 1000;
+        background-color: rgb(42,42,42);
+
+
+        .logoContainer{
+            width: 40px;
+        }
+
+        .menu{
+            display: flex;
+            justify-content: flex-end;
+            align-items:center;
+            width: 40px;
+            height: 50px;
+            cursor: pointer;
+            transition: all .2s ease-in-out;
+
+            &:hover{
+                .burger, .burger::before, .burger::after{
+                    background-color: white;
+                }
+            }
+
+            }
+
+            .burger
+            {
+            width:40px;
+            height: 6px;
+            background: black;
+            transition: all .2s ease-in-out;
+            border-radius: 40px;
+            background-color: rgb(200, 200, 200);
+            
+            }
+
+            .burger::before,
+            .burger::after
+            {
+            content: "";
+            position:absolute;
+            width:40px;
+            background-color: rgb(200, 200, 200);
+            height: 6px;
+            transition: all .2s ease-in-out;
+            border-radius: 40px
+            }
+
+
+            .burger::before
+            {
+            transform: translateY(-18px)
+            }
+
+            .burger::after
+            {
+            transform: translateY(18px)
+            }
+
+            .menu.open .burger
+            {
+            transform: translateX(-100px);
+            background: transparent;
+            box-shadow:none;
+
+            }
+
+            .menu.open .burger::before
+            {
+            transform: rotate(45deg) translate(70px,-70px);
+
+            }
+
+            .menu.open .burger::after
+            {
+            transform: rotate(-45deg) translate(70px, 70px);
+            }
+
+
+    }
+
+
+    .nav{
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        top: 0;
+        width: 100%;
+        height: 0%;
+        overflow: hidden;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.1s ease;
+        background-color: rgb(42,42,42);
+        z-index: 100;
+
+
+    }
+
+    .nav.open{
+        height: 100%;
+        
+
+
+    }
+
+    a{
+        color: rgb(200, 200, 200);
+        text-decoration: none;
+        max-width: 100%;
+        width: 800px;
+        text-align: center;
+        position: relative;
+        height: 25%;
+
+
+        span{
+
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+
+            &::before{
+                top: 0;
+            }
+    
+            &::after{
+                bottom: 0;
+            }
+            
+            &::after,&::before{
+                content: "";
+                display: inline-block;
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: 0px;
+                transition: all 0.1s ease;
+                background-color: rgba(81,81,81, 0.2)
+            }
+    
+           
+        }
+    }
+}
+
+
+
+@media (min-width: 768px){
+
+    .header{
+        .nav{
+            a{
+                &:hover{
+                    color: white;
+                    
+                    span::before, span::after{
+                        height: 50%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px){
+    .header{
+        .nav{
+            a{
+                &:active{
+                    color: white;
+                    
+                    span::before, span::after{
+                        height: 50%;
+                    }
+                }
+            }
+        }
+    }
+
+
+}

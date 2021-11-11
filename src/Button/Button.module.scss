@@ -1,0 +1,95 @@
+.Btn{
+    transition: all 0.4s ease;
+    padding: 15px;
+    position: relative;
+    border: 1px solid;
+    color: white;
+    text-decoration: none;
+    box-shadow: 5px 5px 1px rgba(0,0,0,1);
+    background-color: rgb(42,42,42);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+
+
+    span{
+        margin: 0 2px 0 0;
+
+
+        &::before, &::after{
+            content: "";
+            display: inline-block;
+            position: absolute;
+            width: 100%;
+            height: 0%;
+            left: 0;
+            transition: all 0.4s ease;
+            background-color: rgba(200,200,200, 0.5);
+        }
+
+        &::before{
+            top: 0
+        }
+
+        &::after{
+            bottom: 0;
+        }
+    }
+
+}
+
+.rotate{
+
+
+    span{
+
+        &::before,&::after{
+            height: 50%;
+        }
+
+    }
+
+svg{
+    animation: rotate 2s infinite;
+}
+
+@keyframes rotate {
+    100% {transform: rotate(360deg)}
+  }
+}
+
+@media (min-width: 768px){
+    .Btn{
+        
+        &:hover{
+
+            span{
+    
+                &::before,&::after{
+                    height: 50%;
+                }
+    
+            }
+        }
+    }
+}
+
+@media (max-width: 768px){
+    .Btn{
+        
+        &:active{
+
+            span{
+    
+                &::before,&::after{
+                    height: 50%;
+                }
+    
+            }
+        }
+    }
+}
+
