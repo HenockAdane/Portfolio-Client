@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from "./ProjectSmall.module.scss"
+import Skill from '../Skill/Skill';
 
 function ProjectSmall(props) {
     return (
@@ -16,7 +17,7 @@ function ProjectSmall(props) {
                 <div className={styles.techStackContainer}>
 
                     <div className={styles.tech}>
-                        {props.techUsed}
+                        {props.techUsed.map((a,i) => <Skill skill={a} key={i} />)}
                     </div>
                 </div>
 

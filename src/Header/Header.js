@@ -33,7 +33,7 @@ function Header() {
 
                 <div className={styles.absoluteHeader}>
                 
-                    <Link to="/" className={styles.logoContainer} onClick={classNames.menu === `${styles.menu} ${styles.open}` ?
+                    <Link to="/" className={styles.logoContainer} onClick={() => classNames.menu === `${styles.menu} ${styles.open}` ?
                     toggleMenu : false}>
 {  //                      <ImHome3 className={styles.home3} size="47" />
                             <img src="/favicon.svg" alt="logo"/>

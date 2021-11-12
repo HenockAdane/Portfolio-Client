@@ -37,7 +37,7 @@ function Portfolio(props) {
                     to={`/portfolio/${project.title}`}
                     title={project.title}
                     projectImg={project.img}
-                    techUsed={project.techUsed.map(tech => <Skill skill={tech} />)}
+                    techUsed={project.techUsed}
                     
                     />)}
                 </div>

@@ -9,12 +9,6 @@ import Data from "./Data.json"
 
 function App() {
 
-/* ,{"title":"Bookmark","description":"This project required me to build a fully responsive landing page to the designs provided. I used HTML5, along with CSS Grid and JavaScript for the areas that required interactivity, such as the features section.","img":"/images/portfolio/desktop/image-portfolio-bookmark.jpg","type":"Interaction Design / Front-End Development","techUsed":["HTML","CSS","ES6 JAVASCRIPT"],"liveLink":"https://book-mark-by-henock-adane.vercel.app/"}*/
-
-
-
-
-  // const socket = io.connect("http://localhost:3001/")
   
 
   return (
@@ -30,10 +24,9 @@ function App() {
 
     <Route exact={true} path="/" render={()=> <About/> } />
 
-      {Data.map((project, i) => <Route exact={true} path={`/portfolio/${project.title}`} render={() => <ProjectBig 
+      {Data.map((project, i) => <Route exact={true} key={i} path={`/portfolio/${project.title}`} render={() => <ProjectBig 
       title={project.title} 
       img={project.img}
-      key={i}
       liveLink={project.liveLink}
       githubLink={project.githubLink}
       description={project.description}

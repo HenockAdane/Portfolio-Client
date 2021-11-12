@@ -39,3 +39,17 @@
     
 }
 
+@media(min-width: 800px){
+    .Skill{
+    
+        span{
+            &:hover::before, &:hover::after{
+                height: 50%;
+            }
+        }
+    
+        
+    }
+    
+}
+
